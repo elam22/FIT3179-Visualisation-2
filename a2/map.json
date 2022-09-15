@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 640,
+    "height": 360,
+    "projection": {"type": "equalEarth"},
+    "layer": [
+        {
+          "data": {
+            "name": "world",
+            "url": "data/world-110m.json",
+            "format": {"type": "topojson", "feature": "countries"}
+          },
+          "mark": {"type": "geoshape", "fill": "cream", "stroke": "black"}
+        },
+      {
+          "data": {
+              "name": "earthquakes",
+              "url": "data/whc-sites-2019.geojson",
+              "format": {"type": "json", "property": "features"}
+            },
+            "transform": [
+              {"calculate": "datum.geometry.coordinates[0]", "as": "longitude"},
+              {"calculate": "datum.geometry.coordinates[1]", "as": "latitude"},
+              {"calculate": "datum.properties.name_en", "as": "name"}
+              ],
+          "mark": {"type": "circle", "color": "steelblue", "size":8},
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "tooltip": [{"field": "name"}]
+        }
+        }
+      ]
+  }

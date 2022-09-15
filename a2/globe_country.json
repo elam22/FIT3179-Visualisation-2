@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "projection": {
+      "type": "orthographic",
+      "rotate": {"expr": "[rotate0, rotate1]"}
+    },
+    "encoding": {
+      "color": {
+        "field": "country_count",
+        "type": "quantitative"
+      },
+      "tooltip": [{"field":"name"},{"field": "country_count"}]
+    },
+    "params": [
+      {
+        "name": "rotate0",
+        "value": 0,
+        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
+      },
+      {
+        "name": "rotate1",
+        "value": 0,
+        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
+      }
+    ],
+  "projections": [
+    {
+      "name": "projection",
+      "scale": 225,
+      "type": "orthographic",
+      "translate": {"signal": "[width/2, height/2]"},
+      "rotate": [{"signal": "rotate0"}, {"signal": "rotate1"}, 0]
+    }
+  ],
+    "layer": [
+      {
+        "data": {"sphere": true},
+        "mark": {"type": "geoshape", "fill": "aliceblue"}
+      },
+      {
+        "data": {
+        "name": "world",
+        "url": "data/world-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "transform": [{
+        "lookup": "id",
+        "from": {
+          "data": {
+            "url": "data/country_count_2.csv"
+          },
+          "key": "id",
+          "fields": ["country_count","name"]
+        }
+      }]
+    }
+    ]
+    
+  }

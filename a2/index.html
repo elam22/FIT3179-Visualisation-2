@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+      <td>
+    <button id="globe" onclick="globe()">Globe</button>
+      </td>
+    </tr>
+      <tr>
+      <td>
+    <button id="map" onclick="map()">Map</button>
+      </td></tr>
+    </table>
+    <div id="vis" style="display:none"></div>
+    <div id="vis1"></div>
+    <div id="vis2"></div>
+    <div id="vis3" style="display:none"></div>
+
+    <script type="text/javascript">
+        var spec1 = "globe.json";
+        vegaEmbed('#vis', spec1).then(function(result) {
+  }).catch(console.error);
+
+  var spec2 = "map.json";
+        vegaEmbed('#vis1', spec2).then(function(result) {
+  }).catch(console.error);
+
+  var spec3 = "map_country.json";
+        vegaEmbed('#vis2', spec3).then(function(result) {
+  }).catch(console.error);
+
+  var spec4 = "globe_country.json";
+        vegaEmbed('#vis3', spec4).then(function(result) {
+  }).catch(console.error);
+
+  const globe1 = document.getElementById("vis");
+  const globe2 = document.getElementById("vis3");
+  const map1 = document.getElementById("vis1");
+  const map2= document.getElementById("vis2");
+
+  function globe(){
+   
+    const btn = document.getElementById("globe");
+    btn.onclick = function () {
+        globe1.style.display = "block";
+        globe2.style.display = "block";
+        map1.style.display = "none";
+        map2.style.display = "none";
+      }
+    };
+
+
+  function map(){
+   
+   const btn = document.getElementById("map");
+   btn.onclick = function () {
+       globe1.style.display = "none";
+       globe2.style.display = "none";
+       map1.style.display = "block";
+       map2.style.display = "block";
+     }
+   };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  </head>
+  <body>
+    <div id="vis1"></div>
+
+    <script type="text/javascript">
+    var spec1 = "map_country.json";
+        vegaEmbed('#vis1', spec1).then(function(result) {
+  }).catch(console.error);
+
+    </script>
+  </body>
+</html>
