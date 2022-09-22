@@ -1,38 +1,30 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
-    "height": 300,
+    "width": 350,
+    "height": 400,
     "projection": {
       "type": "orthographic",
-      "rotate": {"expr": "[rotate0, rotate1]"}
+      "rotate": {"expr": "[x, y]"}
+    },
+    "config":{
+      "background":"transparent"
     },
     "params": [
       {
-        "name": "rotate0",
+        "name": "x",
         "value": 0,
         "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
       },
       {
-        "name": "rotate1",
+        "name": "y",
         "value": 0,
         "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
       }
     ],
-
-  "projections": [
-    {
-      "name": "projection",
-      "scale": 225,
-      "type": "orthographic",
-      "translate": {"signal": "[width/2, height/2]"},
-      "rotate": [{"signal": "rotate0"}, {"signal": "rotate1"}, 0]
-    }
-  ],
-
     "layer": [
       {
         "data": {"sphere": true},
-        "mark": {"type": "geoshape", "fill": "aliceblue"}
+        "mark": {"type": "geoshape", "fill": "#d4f1f9"}
       },
       {
         "data": {
@@ -40,7 +32,7 @@
           "url": "data/world-110m.json",
           "format": {"type": "topojson", "feature": "countries"}
         },
-        "mark": {"type": "geoshape", "fill": "mintcream", "stroke": "black"}
+        "mark": {"type": "geoshape", "fill": "#e1e1d1", "stroke": "black"}
       },
     {
         "data": {
@@ -53,13 +45,13 @@
             {"calculate": "datum.geometry.coordinates[1]", "as": "latitude"},
             {"calculate": "datum.properties.name_en", "as": "name"},
             {
-              "filter": "(rotate0 * -1) - 90 < datum.longitude && datum.longitude < (rotate0 * -1) + 90 && (rotate1 * -1) - 90 < datum.latitude && datum.latitude < (rotate1 * -1) + 90"
+              "filter": "(x * -1) - 90 < datum.longitude && datum.longitude < (x * -1) + 90 && (y * -1) - 90 < datum.latitude && datum.latitude < (y * -1) + 90"
             }],
-        "mark": {"type": "circle", "color": "red", "opacity": 0.25},
+        "mark": {"type": "circle", "color": "#157497", "size": 15},
           "encoding": {
             "longitude": {"field": "longitude", "type": "quantitative"},
             "latitude": {"field": "latitude", "type": "quantitative"},
-            "tooltip": [{"field": "name"}]
+            "tooltip": [{"field": "name", "title":"Name"}]
       }
       }
     ]

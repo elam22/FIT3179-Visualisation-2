@@ -8,12 +8,11 @@
     },
     "encoding": {
       "color": {
-        "field": "country_count",
-        "type": "quantitative",
-        "title": "Number of Sites"
+        "field": "count",
+        "type": "quantitative"
       },
-      "tooltip": [{"field":"name", "title": "Country Name"},{"field": "country_count", "title": "Number of Sites"}]
-    },
+    "tooltip": [{"field": "name", "type":"nominal","title":"Region"},{"field": "count", "type":"quantitative","title":"Number of Sites"}]
+  },
     "params": [
       {
         "name": "rotate0",
@@ -29,19 +28,19 @@
     "layer": [
       {
         "data": {
-        "name": "world",
-        "url": "data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
+          "name": "line",
+          "url": "data/continents.topojson",
+          "format": {"type": "topojson", "feature":"continents"}
+        },
       "mark": {"type": "geoshape", "stroke": "black"},
       "transform": [{
         "lookup": "id",
         "from": {
           "data": {
-            "url": "data/processed/country_count_total.csv"
+            "url": "data/processed/region_count_total.csv"
           },
           "key": "id",
-          "fields": ["country_count","name"]
+          "fields": ["count", "name"]
         }
       }]
     }
