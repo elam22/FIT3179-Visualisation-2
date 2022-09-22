@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Percent of Sites in Danger",
+  "width": 600,
+  "height": 300,
+  "data": {"url": "data/processed/whc-sites-2019-processed.csv"},
+  "mark": "bar",
+   "transform": [
+    {"filter":"datum.region != 'nan'"},
+    {
+      "aggregate": [{
+       "op": "mean",
+       "field": "danger",
+       "as": "danger"
+      }],
+      "groupby": ["region"]
+    },{
+      "calculate": "datum.danger*100", "as" :"danger_percent"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "region",
+      "type": "nominal",
+      "title":"Region"
+    },
+    "y": {
+      "field": "danger_percent",
+      "type": "quantitative",
+      "title":"Percent of Sites in Danger (%)",
+      "axis": {
+        "domain": false, 
+        "grid": false
+      }
+    },
+    "color":{
+      "field":"region",
+      "title":"Region",
+      "legend":null,
+      "scale":{
+        "range":["#BEB8EB","#788BFF","#0B5563","#FCB07E","#5E5C6C","#832161", "#987284"]
+      }
+    },
+    "tooltip":[
+      {
+        "field":"danger_percent",
+        "type":"quantitative",
+        "title":"Percent of Sites (%)",
+        "format":".2f"
+      },
+      {
+        "field":"region",
+        "type":"nominal",
+        "title":"Region"
+      }
+    ]
+  }
+}

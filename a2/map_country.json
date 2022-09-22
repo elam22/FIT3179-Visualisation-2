@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title":"World Heritage Sites by Country",
     "width": 500,
     "height": 300,
     "projection": {"type": "equalEarth"},
@@ -24,7 +25,7 @@
         "lookup": "id",
         "from": {
           "data": {
-            "url": "data/country_count_2.csv"
+            "url": "data/processed/country_count_total.csv"
           },
           "key": "id",
           "fields": ["country_count","name"]
@@ -33,7 +34,8 @@
       "encoding": {
         "color": {
           "field": "country_count",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Number of Sites"
         },
         "tooltip": [{"field": "name", "type":"nominal","title":"Country"},{"field": "country_count", "type":"quantitative","title":"Number of Sites"}]
       }}]
