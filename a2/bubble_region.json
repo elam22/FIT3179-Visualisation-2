@@ -4,19 +4,24 @@
   "data": {
     "url": "data/processed/whc-sites-2019-processed.csv"
   },
-  "width":350,
+  "width": 350,
   "height": 300,
   "transform": [
     {
       "filter": "datum.region != 'nan'"
     },
     {
-      "aggregate": [{
-       "op": "mean",
-       "field": "area_hectares",
-       "as": "area"
-      }],
-      "groupby": ["date_inscribed", "region"]
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "area_hectares",
+          "as": "area"
+        }
+      ],
+      "groupby": [
+        "date_inscribed",
+        "region"
+      ]
     }
   ],
   "mark": {
@@ -31,46 +36,61 @@
       "type": "temporal",
       "axis": {
         "grid": false,
-        "title":" Construction Year",
+        "title": " Construction Year",
         "labelAngle": "-90"
       }
     },
     "y": {
       "field": "region",
       "type": "nominal",
-      "axis": {"title": "World Region"}},
+      "axis": {
+        "title": "World Region"
+      }
+    },
     "size": {
       "field": "area",
       "type": "quantitative",
       "title": "Average Area of Sites (Hectares)",
-      "legend": {"clipHeight":70},
-      "scale": {"rangeMax": 4000}
+      "legend": {
+        "clipHeight": 70
+      },
+      "scale": {
+        "rangeMax": 4000
+      }
     },
     "color": {
       "field": "region",
       "type": "nominal",
       "legend": null,
-      "scale":{
-        "range":["#BEB8EB","#788BFF","#0B5563","#FCB07E","#5E5C6C","#832161", "#987284"]
+      "scale": {
+        "range": [
+          "#BEB8EB",
+          "#788BFF",
+          "#0B5563",
+          "#FCB07E",
+          "#5E5C6C",
+          "#832161",
+          "#987284"
+        ]
       }
     },
-    "tooltip":[
+    "tooltip": [
       {
-        "field":"date_inscribed",
-        "type":"temporal",
-        "title":"Year",
-        "format":"%Y"
+        "field": "date_inscribed",
+        "type": "temporal",
+        "title": "Year",
+        "format": "%Y"
       },
       {
-        "field":"region",
-        "type":"nominal",
-        "title":"Region"
+        "field": "region",
+        "type": "nominal",
+        "title": "Region"
       },
       {
-        "field":"area",
-        "type":"quantitative",
-        "title":"Average Area (Hectares)",
-        "format":"0.2f"
+        "field": "area",
+        "type": "quantitative",
+        "title": "Average Area (Hectares)",
+        "format": "0.2f"
       }
     ]
   }

@@ -1,49 +1,82 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
-    "height": 300,
-    "projection": {
-      "type": "orthographic",
-      "rotate": {"expr": "[rotate0, rotate1]"}
-    },
-    "encoding": {
-      "color": {
-        "field": "count",
-        "type": "quantitative"
-      },
-    "tooltip": [{"field": "name", "type":"nominal","title":"Region"},{"field": "count", "type":"quantitative","title":"Number of Sites"}]
-  },
-    "params": [
-      {
-        "name": "rotate0",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-      },
-      {
-        "name": "rotate1",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-      }
-    ],
-    "layer": [
-      {
-        "data": {
-          "name": "line",
-          "url": "data/continents.topojson",
-          "format": {"type": "topojson", "feature":"continents"}
-        },
-      "mark": {"type": "geoshape", "stroke": "black"},
-      "transform": [{
-        "lookup": "id",
-        "from": {
-          "data": {
-            "url": "data/processed/region_count_total.csv"
-          },
-          "key": "id",
-          "fields": ["count", "name"]
-        }
-      }]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 300,
+  "projection": {
+    "type": "orthographic",
+    "rotate": {
+      "expr": "[rotate0, rotate1]"
     }
+  },
+  "encoding": {
+    "color": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "name",
+        "type": "nominal",
+        "title": "Region"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Number of Sites"
+      }
     ]
-    
-  }
+  },
+  "params": [
+    {
+      "name": "rotate0",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
+      }
+    },
+    {
+      "name": "rotate1",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "name": "line",
+        "url": "data/continents.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "continents"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black"
+      },
+      "transform": [
+        {
+          "lookup": "id",
+          "from": {
+            "data": {
+              "url": "data/processed/region_count_total.csv"
+            },
+            "key": "id",
+            "fields": [
+              "count",
+              "name"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Embedding Vega-Lite</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-     <!-- Import pure.css -->
+<head>
+  <title>Embedding Vega-Lite</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <!-- Import pure.css -->
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  </head>
-  <body style="margin-left:60px; margin-right:60px;background-color: #99b4c8;">
+</head>
 
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="description description-left">
-          <h3>UNESCO</h3>
-          <h1>WORLD</br>HERITAGE</br>SITES</h1>
-        </div>
-      </div>
+<body style="margin-left:60px; margin-right:60px;background-color: #99b4c8;">
 
-      <div class="pure-u-1-2">
-        <div id="globe3" style="display:block;text-align: center;"></div>
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div class="description description-left">
+        <h3>UNESCO</h3>
+        <h1>WORLD</br>HERITAGE</br>SITES</h1>
       </div>
     </div>
 
-    <div style="background-color:white">
+    <div class="pure-u-1-2">
+      <div id="globe3" style="display:block;text-align: center;"></div>
+    </div>
+  </div>
+
+  <div style="background-color:white">
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <p>United Nations Educational, Scientific and Cultural Organization (UNESCO) World Heritage List contains sites which are designated as having “outstanding universal value” under the Convention Concerning the Protection of the World Cultural and Natural Heritage. </br></br>This document was adopted by UNESCO in 1972 and formally took effect in 1975 after having been ratified by 20 countries. It provides a framework for international cooperation in preserving and protecting cultural treasures and natural areas throughout the world.
-          </br></br><a id="region" onclick="changeMapToCountry()" style="color: #157497;display:block"><u>Change Map View</u></a>
+          <p>United Nations Educational, Scientific and Cultural Organization (UNESCO) World Heritage List contains
+            sites which are designated as having “outstanding universal value” under the Convention Concerning the
+            Protection of the World Cultural and Natural Heritage. </br></br>This document was adopted by UNESCO in 1972
+            and formally took effect in 1975 after having been ratified by 20 countries. It provides a framework for
+            international cooperation in preserving and protecting cultural treasures and natural areas throughout the
+            world.
+            </br></br><a id="region" onclick="changeMapToCountry()" style="color: #157497;display:block"><u>Change Map
+                View</u></a>
           </p>
-       
+
         </div>
       </div>
 
@@ -54,9 +62,12 @@
 
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <p style="margin-top:50px">Despite beginning in 1975, sites were continuously being added to the list.  <a style="color:#FCB07E"><strong>Europe</strong></a> has the largest number of sites, with a over 180 sites being recognised between <strong>1990</strong> and <strong>2000</strong>.
-          </br></br><a style="color:#832161"><strong>Oceania</strong></a> did not have a site on the list until over 10 years after the list was created.
-          </br></br><i>Use the legend to highlight a region.</i>
+          <p style="margin-top:50px">Despite beginning in 1975, sites were continuously being added to the list. <a
+              style="color:#FCB07E"><strong>Europe</strong></a> has the largest number of sites, with a over 180 sites
+            being recognised between <strong>1990</strong> and <strong>2000</strong>.
+            </br></br><a style="color:#832161"><strong>Oceania</strong></a> did not have a site on the list until over
+            10 years after the list was created.
+            </br></br><i>Use the legend to highlight a region.</i>
           </p>
         </div>
       </div>
@@ -64,8 +75,12 @@
 
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div class="description description-left" >
-          <p style="margin-top:60px">A unique part of the sites are their size, with some of the smallest sites being only a few square meters in size while the largest site 'French Austral Lands and Seas' which is located in  <a style="color:#FCB07E"><strong>Europe</strong></a> measures 67,297,900 hectares. </br></br>The bubble plot explores the average size of sites in their construction year across each region. A key highlight of this plot, is two of the largest average areas for a given year, were both from <strong>2010</strong>.</p>
+        <div class="description description-left">
+          <p style="margin-top:60px">A unique part of the sites are their size, with some of the smallest sites being
+            only a few square meters in size while the largest site 'French Austral Lands and Seas' which is located in
+            <a style="color:#FCB07E"><strong>Europe</strong></a> measures 67,297,900 hectares. </br></br>The bubble plot
+            explores the average size of sites in their construction year across each region. A key highlight of this
+            plot, is two of the largest average areas for a given year, were both from <strong>2010</strong>.</p>
         </div>
       </div>
 
@@ -82,215 +97,71 @@
 
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <p style="margin-top:50px">Unfortunately, a number of the World Heritage sites are in danger. The 'List of World Heritage Sites' was compiled by UNESCO and is intended to increase awareness of the threats to these sites and to increase counteractive measures. </br></br>
-          Despite only having a small number of sites, <a style="color:#832161"><strong>Oceania</strong></a> has the <u>highest percentage of sites in danger</u>, while <a style="color:#0B5563"><strong>Australia</strong></a> has the lowest, with <u>no known danger sites</u>.
-          </br></br>
-          <a href="https://whc.unesco.org/en/list/" style="color:#157497">Learn more about the UNESCO World Heritage Sites</a>
-        </p>
-       
+          <p style="margin-top:50px">Unfortunately, a number of the World Heritage sites are in danger. The 'List of
+            World Heritage Sites' was compiled by UNESCO and is intended to increase awareness of the threats to these
+            sites and to increase counteractive measures. </br></br>
+            Despite only having a small number of sites, <a style="color:#832161"><strong>Oceania</strong></a> has the
+            <u>highest percentage of sites in danger</u>, while <a style="color:#0B5563"><strong>Australia</strong></a>
+            has the lowest, with <u>no known danger sites</u>.
+            </br></br>
+            <a href="https://whc.unesco.org/en/list/" style="color:#157497">Learn more about the UNESCO World Heritage
+              Sites</a>
+          </p>
+
         </div>
       </div>
     </div>
 
-  
+
   </div>
-   
-   
-
-    
-    <!-- <table>
-      <tr>
-      <td>
-    <button id="globe" onclick="globe()">Globe</button>
-      </td>
-    </tr>
-      <tr>
-      <td>
-    <button id="map" onclick="map()">Map</button>
-      </td></tr>
-    </table>
-    <div id="vis" style="display:none"></div>
-    <div id="vis1"></div>
-    <div id="vis2"></div>
-    <div id="vis3" style="display:none"></div> -->
-
-    <script type="text/javascript">
-  //       var spec1 = "globe.json";
-  //       vegaEmbed('#vis', spec1).then(function(result) {
-  // }).catch(console.error);
 
 
-  // var spec2 = "map.json";
-  //       vegaEmbed('#vis1', spec2).then(function(result) {
-  // }).catch(console.error);
+  <script type="text/javascript">
 
-  // var spec3 = "map_country.json";
-  //       vegaEmbed('#vis2', spec3).then(function(result) {
-  // }).catch(console.error);
+    var spec9 = "globe.json";
+    vegaEmbed('#globe3', spec9, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
-
-
-  // var spec1 = "line.json";
-  //       vegaEmbed('#line', spec1).then(function(result) {
-  // }).catch(console.error);
-
-  // var spec1 = "line_country.json";
-  //       vegaEmbed('#line2', spec1).then(function(result) {
-  // }).catch(console.error);
-
-  // var spec1 = "line_country copy.json";
-  //       vegaEmbed('#line3', spec1).then(function(result) {
-  // }).catch(console.error);
-
-  // var spec1 = "map_region.json";
-  //       vegaEmbed('#line4', spec1).then(function(result) {
-  // }).catch(console.error);
+    var spec3 = "bubble_region.json";
+    vegaEmbed('#bubble1', spec3, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
 
-  var spec9 = "globe.json";
-        vegaEmbed('#globe3', spec9, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    var spec5 = "map_region.json";
+    vegaEmbed('#map1', spec5, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
-  var spec3 = "bubble_region.json";
-        vegaEmbed('#bubble1', spec3, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    var spec6 = "map_country.json";
+    vegaEmbed('#map2', spec6, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
+    var spec7 = "bar_region.json";
+    vegaEmbed('#bar1', spec7, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
-  var spec5 = "map_region.json";
-        vegaEmbed('#map1', spec5, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    var spec10 = "line_region.json";
+    vegaEmbed('#line1', spec10, { "actions": false }).then(function (result) {
+    }).catch(console.error);
 
-  var spec6 = "map_country.json";
-        vegaEmbed('#map2', spec6, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    const map1 = document.getElementById("map1");
+    const map2 = document.getElementById("map2");
 
-  var spec7 = "bar_region.json";
-        vegaEmbed('#bar1', spec7, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    var country = 'True';
 
-  var spec10 = "line_region.json";
-        vegaEmbed('#line1', spec10, {"actions": false}).then(function(result) {
-  }).catch(console.error);
+    function changeMapToCountry() {
+      if (country == 'True') {
+        map1.style.display = "block";
+        map2.style.display = "none";
+        country = 'False';
+      }
+      else {
+        map1.style.display = "none";
+        map2.style.display = "block";
+        country = 'True';
+      }
 
-  const map1 = document.getElementById("map1");
-  const map2 = document.getElementById("map2");
-
-  var country = 'True';
-
-  function changeMapToCountry(){
-    if (country== 'True'){
-      map1.style.display = "block";
-      map2.style.display = "none";
-      country = 'False';
     }
-    else{
-      map1.style.display = "none";
-      map2.style.display = "block";
-      country = 'True';
-    }
-   
-  }
+  </script>
+</body>
 
-  function changeMapToRegion(){
-    regionText.style.display = "none";
-    countryText.style.display = "block";
-    map1.style.display = "none";
-    map2.style.display = "block";
-}
-
-
-  // const globe1 = document.getElementById("vis");
-  // const globe2 = document.getElementById("vis3");
-  
-  // const map1 = document.getElementById("vis1");
-  // const map2= document.getElementById("vis2");
-  // var viewType = 'site';
-
-  // let view = document.querySelectorAll('input[name="view"]');
-  // var selected;
-  // for (var i=0;i<=view.length;i++){
-  //   if (view[i].checked){
-  //     selected = view[i].value;
-  //     break;
-  //   }
-  // }
-
-  // function siteView(){
-  //   const btn1 = document.getElementById("site");
-  //   btn1.onclick = function () {
-  //     if (selected == 'map'){
-  //       map1.style.display = "block";
-  //      map2.style.display = "none";
-  //     }
-  //     else if (selected == 'globe'){
-  //       globe1.style.display = "block";
-  //       globe2.style.display = "none";
-  //     }
-  //     viewType = 'site';
-  //     }
-  //   };
-
-  // function countryView(){
-  //  const btn2 = document.getElementById("country");
-  //  btn2.onclick = function () {
-  //     if (selected == 'map'){
-  //       map1.style.display = "none";
-  //      map2.style.display = "block";
-  //     }
-  //     else if (selected == 'globe'){
-  //      globe1.style.display = "none";
-  //      globe2.style.display = "block";
-  //    }
-  //    viewType = 'country';
-  //  }
-  // }
-
-  //  function changeView(){
-  //   const btn3 = document.getElementById("site");
-  //   btn3.onclick = function () {
-  //   view = document.querySelectorAll('input[name="view"]');
-  //   for (var i=0;i<=view.length;i++){
-  //   if (view[i].checked){
-  //     selected = view[i].value;
-  //     break;
-  //   }
-  //   }
-  //   if (viewType == 'country'){
-  //     if (selected == 'map'){
-  //       map1.style.display = "none";
-  //      map2.style.display = "block";
-
-  //      globe1.style.display = "none";
-  //      globe2.style.display = "none";
-  //     }
-  //     else if (selected == 'globe'){
-  //       map1.style.display = "none";
-  //      map2.style.display = "none";
-
-  //      globe1.style.display = "none";
-  //      globe2.style.display = "block";
-  //   }
-  // }
-  //   else if (viewType == 'site'){
-  //     if (selected == 'map'){
-  //       map1.style.display = "block";
-  //      map2.style.display = "none";
-
-  //       globe1.style.display = "none";
-  //      globe2.style.display = "none";
-  //     }
-  //     else if (selected == 'globe'){
-  //      globe1.style.display = "block";
-  //      globe2.style.display = "none";
-
-  //      map1.style.display = "none";
-  //      map2.style.display = "none";
-  //    }
-  //   }
-
-  //   }
-  //  }
-
-    </script>
-  </body>
 </html>

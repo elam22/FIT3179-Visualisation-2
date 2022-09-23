@@ -2,61 +2,73 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
   "height": 300,
-  "title":"Sites Per Region",
+  "title": "Sites Per Region",
   "description": "Stock prices of 5 Tech Companies over Time.",
-  "data": {"url": "data/processed/year_count_out_pivot.csv"},
-  "mark":"line",
-  "params": [{
-    "name": "region",
-    "select": {"type": "point", "fields": ["Region"]},
-    "bind": "legend"
-  }],
-  "encoding":{
-      "x": {
-        "field": "Year",
-        "type": "temporal",
-        "axis": {
-          "domain": false, 
-          "grid": false
-        }
+  "data": { "url": "data/processed/year_count_out_pivot.csv" },
+  "mark": "line",
+  "params": [
+    {
+      "name": "region",
+      "select": { "type": "point", "fields": ["Region"] },
+      "bind": "legend"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "axis": {
+        "domain": false,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Number of Sites",
+      "axis": {
+        "domain": false,
+        "grid": false
+      }
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#BEB8EB",
+          "#788BFF",
+          "#0B5563",
+          "#FCB07E",
+          "#5E5C6C",
+          "#832161",
+          "#987284"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "region",
+        "value": 1
       },
-      "y": {
+      "value": 0.2
+    },
+    "tooltip": [
+      {
         "field": "Count",
         "type": "quantitative",
-        "title":"Number of Sites",
-        "axis": {
-          "domain": false,
-          "grid": false
-        }
+        "title": "Number of Sites",
+        "format": ".0f"
       },
-      "color": {
-          "field":"Region",
-          "type":"nominal",
-          "scale":{
-            "range":["#BEB8EB","#788BFF","#0B5563","#FCB07E","#5E5C6C","#832161", "#987284"]
-          }
-        },
-        "opacity": {
-          "condition": {
-            "param": "region",
-            "value": 1},
-          "value": 0.2
-        },
-        "tooltip":[
-          {
-            "field":"Count",
-            "type":"quantitative",
-            "title":"Number of Sites",
-            "format":".0f"
-          }, 
-          {
-            "field":"Region",
-            "type":"nominal"
-          }, 
-          {
-            "field":"Year",
-            "type":"temporal",
-            "format":"%Y"
-          }]
-    }
+      {
+        "field": "Region",
+        "type": "nominal"
+      },
+      {
+        "field": "Year",
+        "type": "temporal",
+        "format": "%Y"
+      }
+    ]
+  }
 }

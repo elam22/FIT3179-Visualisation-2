@@ -1,50 +1,81 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
-    "height": 300,
-    "projection": {
-      "type": "orthographic",
-      "rotate": {"expr": "[rotate0, rotate1]"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 300,
+  "projection": {
+    "type": "orthographic",
+    "rotate": {
+      "expr": "[rotate0, rotate1]"
+    }
+  },
+  "encoding": {
+    "color": {
+      "field": "country_count",
+      "type": "quantitative",
+      "title": "Number of Sites"
     },
-    "encoding": {
-      "color": {
+    "tooltip": [
+      {
+        "field": "name",
+        "title": "Country Name"
+      },
+      {
         "field": "country_count",
-        "type": "quantitative",
         "title": "Number of Sites"
-      },
-      "tooltip": [{"field":"name", "title": "Country Name"},{"field": "country_count", "title": "Number of Sites"}]
-    },
-    "params": [
-      {
-        "name": "rotate0",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-      },
-      {
-        "name": "rotate1",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
       }
-    ],
-    "layer": [
-      {
-        "data": {
+    ]
+  },
+  "params": [
+    {
+      "name": "rotate0",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
+      }
+    },
+    {
+      "name": "rotate1",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
         "name": "world",
         "url": "data/world-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
-      "mark": {"type": "geoshape", "stroke": "black"},
-      "transform": [{
-        "lookup": "id",
-        "from": {
-          "data": {
-            "url": "data/processed/country_count_total.csv"
-          },
-          "key": "id",
-          "fields": ["country_count","name"]
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
         }
-      }]
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black"
+      },
+      "transform": [
+        {
+          "lookup": "id",
+          "from": {
+            "data": {
+              "url": "data/processed/country_count_total.csv"
+            },
+            "key": "id",
+            "fields": [
+              "country_count",
+              "name"
+            ]
+          }
+        }
+      ]
     }
-    ]
-    
-  }
+  ]
+}

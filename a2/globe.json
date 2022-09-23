@@ -1,58 +1,110 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 350,
-    "height": 400,
-    "projection": {
-      "type": "orthographic",
-      "rotate": {"expr": "[x, y]"}
-    },
-    "config":{
-      "background":"transparent"
-    },
-    "params": [
-      {
-        "name": "x",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-      },
-      {
-        "name": "y",
-        "value": 0,
-        "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-      }
-    ],
-    "layer": [
-      {
-        "data": {"sphere": true},
-        "mark": {"type": "geoshape", "fill": "#d4f1f9"}
-      },
-      {
-        "data": {
-          "name": "world",
-          "url": "data/world-110m.json",
-          "format": {"type": "topojson", "feature": "countries"}
-        },
-        "mark": {"type": "geoshape", "fill": "#e1e1d1", "stroke": "black"}
-      },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 350,
+  "height": 400,
+  "projection": {
+    "type": "orthographic",
+    "rotate": {
+      "expr": "[x, y]"
+    }
+  },
+  "config": {
+    "background": "transparent"
+  },
+  "params": [
     {
-        "data": {
-            "name": "earthquakes",
-            "url": "data/whc-sites-2019.geojson",
-            "format": {"type": "json", "property": "features"}
-          },
-          "transform": [
-            {"calculate": "datum.geometry.coordinates[0]", "as": "longitude"},
-            {"calculate": "datum.geometry.coordinates[1]", "as": "latitude"},
-            {"calculate": "datum.properties.name_en", "as": "name"},
-            {
-              "filter": "(x * -1) - 90 < datum.longitude && datum.longitude < (x * -1) + 90 && (y * -1) - 90 < datum.latitude && datum.latitude < (y * -1) + 90"
-            }],
-        "mark": {"type": "circle", "color": "#157497", "size": 15},
-          "encoding": {
-            "longitude": {"field": "longitude", "type": "quantitative"},
-            "latitude": {"field": "latitude", "type": "quantitative"},
-            "tooltip": [{"field": "name", "title":"Name"}]
+      "name": "x",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
       }
+    },
+    {
+      "name": "y",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": -90,
+        "max": 90,
+        "step": 1
       }
-    ]
-  }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#d4f1f9"
+      }
+    },
+    {
+      "data": {
+        "name": "world",
+        "url": "data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e1e1d1",
+        "stroke": "black"
+      }
+    },
+    {
+      "data": {
+        "name": "earthquakes",
+        "url": "data/whc-sites-2019.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "longitude"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "latitude"
+        },
+        {
+          "calculate": "datum.properties.name_en",
+          "as": "name"
+        },
+        {
+          "filter": "(x * -1) - 90 < datum.longitude && datum.longitude < (x * -1) + 90 && (y * -1) - 90 < datum.latitude && datum.latitude < (y * -1) + 90"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "color": "#157497",
+        "size": 15
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Name"
+          }
+        ]
+      }
+    }
+  ]
+}
