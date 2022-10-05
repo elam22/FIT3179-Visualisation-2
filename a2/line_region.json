@@ -3,7 +3,6 @@
   "width": 500,
   "height": 300,
   "title": "Sites Per Region",
-  "description": "Stock prices of 5 Tech Companies over Time.",
   "data": { "url": "data/processed/year_count_out_pivot.csv" },
   "mark": "line",
   "params": [

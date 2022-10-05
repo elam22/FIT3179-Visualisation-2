@@ -1,0 +1,279 @@
+﻿Year,Count,Region
+1978,3,Europe
+1979,23,Europe
+1980,31,Europe
+1981,38,Europe
+1982,40,Europe
+1983,55,Europe
+1984,62,Europe
+1985,71,Europe
+1986,87,Europe
+1987,99,Europe
+1988,109,Europe
+1989,112,Europe
+1990,120,Europe
+1991,128,Europe
+1992,139,Europe
+1993,155,Europe
+1994,167,Europe
+1995,182,Europe
+1996,205,Europe
+1997,230,Europe
+1998,249,Europe
+1999,270,Europe
+2000,301,Europe
+2001,318,Europe
+2002,322,Europe
+2003,330,Europe
+2004,345,Europe
+2005,354,Europe
+2006,359,Europe
+2007,366,Europe
+2008,376,Europe
+2009,382,Europe
+2010,386,Europe
+2011,392,Europe
+2012,399,Europe
+2013,405,Europe
+2014,411,Europe
+2015,419,Europe
+2016,424,Europe
+2017,432,Europe
+2018,438,Europe
+2019,450,Europe
+1979,6,Asia
+1980,12,Asia
+1981,14,Asia
+1982,18,Asia
+1983,22,Asia
+1984,29,Asia
+1985,41,Asia
+1986,48,Asia
+1987,60,Asia
+1988,67,Asia
+1989,68,Asia
+1990,70,Asia
+1991,78,Asia
+1992,83,Asia
+1993,94,Asia
+1994,103,Asia
+1995,106,Asia
+1996,113,Asia
+1997,119,Asia
+1998,125,Asia
+1999,135,Asia
+2000,147,Asia
+2001,152,Asia
+2002,154,Asia
+2003,162,Asia
+2004,172,Asia
+2005,180,Asia
+2006,185,Asia
+2007,192,Asia
+2008,201,Asia
+2009,204,Asia
+2010,213,Asia
+2011,223,Asia
+2012,233,Asia
+2013,240,Asia
+2014,254,Asia
+2015,265,Asia
+2016,274,Asia
+2017,281,Asia
+2018,288,Asia
+2019,299,Asia
+1978,4,North America
+1979,9,North America
+1980,10,North America
+1981,14,North America
+1982,15,North America
+1983,18,North America
+1984,21,North America
+1985,22,North America
+1986,22,North America
+1987,26,North America
+1988,26,North America
+1989,26,North America
+1990,26,North America
+1991,26,North America
+1992,27,North America
+1993,27,North America
+1994,27,North America
+1995,30,North America
+1996,30,North America
+1997,30,North America
+1998,30,North America
+1999,31,North America
+2000,31,North America
+2001,31,North America
+2002,31,North America
+2003,31,North America
+2004,31,North America
+2005,31,North America
+2006,31,North America
+2007,32,North America
+2008,33,North America
+2009,33,North America
+2010,34,North America
+2011,34,North America
+2012,35,North America
+2013,36,North America
+2014,37,North America
+2015,38,North America
+2016,39,North America
+2017,39,North America
+2018,40,North America
+2019,42,North America
+1978,3,Africa
+1979,13,Africa
+1980,20,Africa
+1981,24,Africa
+1982,34,Africa
+1983,36,Africa
+1984,38,Africa
+1985,42,Africa
+1986,45,Africa
+1987,47,Africa
+1988,52,Africa
+1989,55,Africa
+1990,56,Africa
+1991,58,Africa
+1992,59,Africa
+1993,59,Africa
+1994,61,Africa
+1995,61,Africa
+1996,64,Africa
+1997,69,Africa
+1998,69,Africa
+1999,73,Africa
+2000,75,Africa
+2001,80,Africa
+2002,81,Africa
+2003,84,Africa
+2004,88,Africa
+2005,91,Africa
+2006,94,Africa
+2007,98,Africa
+2008,100,Africa
+2009,102,Africa
+2010,102,Africa
+2011,107,Africa
+2012,112,Africa
+2013,114,Africa
+2014,115,Africa
+2015,115,Africa
+2016,117,Africa
+2017,120,Africa
+2018,122,Africa
+2019,123,Africa
+1978,2,South America
+1979,4,South America
+1980,7,South America
+1981,10,South America
+1982,14,South America
+1983,19,South America
+1984,21,South America
+1985,25,South America
+1986,27,South America
+1987,36,South America
+1988,40,South America
+1989,40,South America
+1990,43,South America
+1991,46,South America
+1992,47,South America
+1993,53,South America
+1994,57,South America
+1995,62,South America
+1996,65,South America
+1997,71,South America
+1998,74,South America
+1999,86,South America
+2000,98,South America
+2001,102,South America
+2002,104,South America
+2003,107,South America
+2004,109,South America
+2005,113,South America
+2006,116,South America
+2007,117,South America
+2008,120,South America
+2009,121,South America
+2010,124,South America
+2011,127,South America
+2012,128,South America
+2013,129,South America
+2014,131,South America
+2015,134,South America
+2016,137,South America
+2017,139,South America
+2018,141,South America
+2019,142,South America
+1990,2,Oceania
+1991,2,Oceania
+1992,2,Oceania
+1993,2,Oceania
+1994,2,Oceania
+1995,2,Oceania
+1996,2,Oceania
+1997,2,Oceania
+1998,4,Oceania
+1999,4,Oceania
+2000,4,Oceania
+2001,4,Oceania
+2002,4,Oceania
+2003,4,Oceania
+2004,4,Oceania
+2005,4,Oceania
+2006,4,Oceania
+2007,4,Oceania
+2008,6,Oceania
+2009,6,Oceania
+2010,8,Oceania
+2011,8,Oceania
+2012,9,Oceania
+2013,10,Oceania
+2014,10,Oceania
+2015,10,Oceania
+2016,11,Oceania
+2017,11,Oceania
+2018,11,Oceania
+2019,11,Oceania
+1981,3,Australia
+1982,5,Australia
+1983,5,Australia
+1984,5,Australia
+1985,5,Australia
+1986,6,Australia
+1987,7,Australia
+1988,8,Australia
+1989,8,Australia
+1990,8,Australia
+1991,9,Australia
+1992,10,Australia
+1993,10,Australia
+1994,11,Australia
+1995,11,Australia
+1996,11,Australia
+1997,13,Australia
+1998,13,Australia
+1999,13,Australia
+2000,14,Australia
+2001,14,Australia
+2002,14,Australia
+2003,15,Australia
+2004,16,Australia
+2005,16,Australia
+2006,16,Australia
+2007,17,Australia
+2008,17,Australia
+2009,17,Australia
+2010,18,Australia
+2011,19,Australia
+2012,19,Australia
+2013,19,Australia
+2014,19,Australia
+2015,19,Australia
+2016,19,Australia
+2017,19,Australia
+2018,19,Australia
+2019,20,Australia

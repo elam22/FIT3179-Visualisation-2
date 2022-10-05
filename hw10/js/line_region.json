@@ -1,0 +1,101 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "title": "Sites Per Region",
+    "layer":[
+        {"data": { "url": "data/year_count_out_pivot.csv" },
+        "mark": "line",
+        "params": [
+          {
+            "name": "region",
+            "select": { "type": "point", "fields": ["Region"] },
+            "bind": "legend"
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal",
+            "axis": {
+              "domain": false,
+              "grid": false, 
+              "format":"%Y"
+            }
+          },
+          "y": {
+            "field": "Count",
+            "type": "quantitative",
+            "title": "Number of Sites",
+            "axis": {
+              "domain": false,
+              "grid": false
+            }
+          },
+          "color": {
+            "field": "Region",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                  "#CFB8EB",
+                  "#898BFF",
+                  "#1C5563",
+                  "#EDD07E",
+                  "#6F5C6C",
+                  "#942161",
+                  "#A97284"
+                ]
+              }
+          },
+          "opacity": {
+            "condition": {
+              "param": "region",
+              "value": 1
+            },
+            "value": 0.2
+          },
+          "tooltip": [
+            {
+              "field": "Count",
+              "type": "quantitative",
+              "title": "Number of Sites",
+              "format": ".0f"
+            },
+            {
+              "field": "Region",
+              "type": "nominal"
+            },
+            {
+              "field": "Year",
+              "type": "temporal",
+              "format": "%Y"
+            }
+          ]
+        }},
+        {
+            "data": {
+               "values": [{}]
+            },
+            "encoding": {
+              "x": {"datum": "946684800000", "field":"Year"}
+            },
+            "layer": [{
+              "mark": "rule",
+              "encoding":{
+                "color":{"value":"red"}
+              }
+            }, {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dx": -5,
+                "dy": -250,
+                "y": "height",
+                "text": "Spike in site discovery"
+              }
+            }]
+          }
+    ]
+  }
+  
