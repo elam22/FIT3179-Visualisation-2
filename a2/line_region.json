@@ -3,71 +3,105 @@
   "width": 500,
   "height": 300,
   "title": "Sites Per Region",
-  "data": { "url": "data/processed/year_count_out_pivot.csv" },
-  "mark": "line",
-  "params": [
+  "layer":[
     {
-      "name": "region",
-      "select": { "type": "point", "fields": ["Region"] },
-      "bind": "legend"
-    }
-  ],
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "axis": {
-        "domain": false,
-        "grid": false
-      }
-    },
-    "y": {
-      "field": "Count",
-      "type": "quantitative",
-      "title": "Number of Sites",
-      "axis": {
-        "domain": false,
-        "grid": false
-      }
-    },
-    "color": {
-      "field": "Region",
-      "type": "nominal",
-      "scale": {
-        "range": [
-          "#BEB8EB",
-          "#788BFF",
-          "#0B5563",
-          "#FCB07E",
-          "#5E5C6C",
-          "#832161",
-          "#987284"
-        ]
-      }
-    },
-    "opacity": {
-      "condition": {
-        "param": "region",
-        "value": 1
+      "data": {
+         "values": [{}]
       },
-      "value": 0.2
+      "encoding": {
+        "x":  {"datum":631112400519, "field":"Year"},
+        "x2": {"datum": 946684800000, "field":"Year"}
+      },
+      "layer": [{
+        "mark": "rect",
+        "encoding": {
+          "opacity": {"value":0.3},
+          "color": {"value":"lightgrey"}
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "bottom",
+          "dx": 65,
+          "dy": -250,
+          "y": "height",
+          "text": "Spike in \noverall site discovery",
+          "color": "black",
+          "lineBreak":"\n"
+        }
+      }]
     },
-    "tooltip": [
+    {
+    "data": { "url": "data/processed/year_count_out_pivot.csv" },
+    "mark": "line",
+    "params": [
       {
+        "name": "region",
+        "select": { "type": "point", "fields": ["Region"] },
+        "bind": "legend"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "temporal",
+        "axis": {
+          "domain": false,
+          "grid": false,
+          "format":"%Y"
+        }
+      },
+      "y": {
         "field": "Count",
         "type": "quantitative",
         "title": "Number of Sites",
-        "format": ".0f"
+        "axis": {
+          "domain": false,
+          "grid": false
+        }
       },
-      {
+      "color": {
         "field": "Region",
-        "type": "nominal"
+        "type": "nominal",
+        "scale": {
+          "range": [
+            "#BEB8EB",
+            "#788BFF",
+            "#0B5563",
+            "#FCB07E",
+            "#5E5C6C",
+            "#832161",
+            "#987284"
+          ]
+        }
       },
-      {
-        "field": "Year",
-        "type": "temporal",
-        "format": "%Y"
-      }
-    ]
+      "opacity": {
+        "condition": {
+          "param": "region",
+          "value": 1
+        },
+        "value": 0.2
+      },
+      "tooltip": [
+        {
+          "field": "Count",
+          "type": "quantitative",
+          "title": "Number of Sites",
+          "format": ".0f"
+        },
+        {
+          "field": "Region",
+          "type": "nominal"
+        },
+        {
+          "field": "Year",
+          "type": "temporal",
+          "format": "%Y"
+        }
+      ]
+    }
   }
+
+  ]
 }
