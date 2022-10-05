@@ -18,7 +18,7 @@
           "url": "data/ne_110m_graticules_30.json",
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
-        "mark": {"type": "geoshape", "stroke": "lightgrey", "fill":"transparent"}
+        "mark": {"type": "geoshape", "stroke": "grey", "fill":"transparent"}
       },
       {
       "data": {
