@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Percent of Sites in Danger",
+  "title": {
+    "text":"Percent of Sites in Danger",
+    "fontSize":15},
   "width": 600,
   "height": 300,
   "layer":[

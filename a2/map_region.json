@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "World Heritage Sites by Region",
+  "title": {
+    "text":"World Heritage Sites by Region",
+    "fontSize":15},
   "width": 500,
   "height": 300,
   "projection": {
